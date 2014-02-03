@@ -7,8 +7,6 @@ import time
 import paramiko
 
 from argparse import ArgumentParser, ArgumentError
-from os.path import expanduser, isfile
-
 
 config = ConfigParser.ConfigParser()
 config_file = 'deploy_config.ini'
@@ -218,7 +216,7 @@ def ceph_install(ceph_home):
 
     command = 'ceph-deploy gatherkeys %s' % (monitor_nodes)
     execute_shell_command(command)
-    while isfile('ceph.client.admin.keyring') is False:
+    while os.path.isfile('ceph.client.admin.keyring') is False:
         print "Quorum status not reached, trying after 5 seconds"
         time.sleep(5)
         execute_shell_command(command)
