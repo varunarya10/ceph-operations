@@ -64,8 +64,9 @@ Execute on ceph-client node.
     
 1) Create an entire ceph cluster
     
+    ```
     python ceph_install.py install -c ~/my_cluster 
-    
+    ```
 
 If you want to use client node as admin node to operate the cluster, please create a directory "/etc/ceph" to contain the conf files for ceph cluster.
 
@@ -81,8 +82,10 @@ To check the monitor status, use ```ceph mon stat``` or ```sudo ceph mon dump```
    
 Configure the details of new node in the conf file in specified format and execute the command.
  
+   ```
    python ceph_install.py add_osd -c ~/my_cluster
-
+   ```
+ 
 3) Remove an OSD: TODO
  
   
