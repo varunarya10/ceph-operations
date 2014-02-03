@@ -64,9 +64,9 @@ Execute on ceph-client node.
     
 1) Create an entire ceph cluster
     
-    ```
+    
     python ceph_install.py install -c ~/my_cluster 
-    ```
+    
 
 If you want to use client node as admin node to operate the cluster, please create a directory "/etc/ceph" to contain the conf files for ceph cluster.
 
