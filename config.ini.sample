@@ -1,13 +1,22 @@
-[CEPH]
+[DEFAULT]
+ceph_home_dir = ~/my_cluster
+
+[INSTALL]
 ;Nodes where ceph needs to be installed
-ceph_nodes = ceph-node1, ceph-node2, ceph-node3, ceph-node4
+ceph_nodes = ceph-node1, ceph-node2, ceph-node3
+mon_nodes = ceph-node1
+osd_nodes = ceph-node2:sdb, ceph-node3:sdb
 
-[MON]
+
+[NEW_MON]
 ;Nodes whete monitor ptocess will be running
-mon_nodes = ceph-node1, ceph-node2
+mon_nodes = 
 
-[OSD]
-;Nodes where osd process will be running
-osd_nodes = ceph-node2, ceph-node3, ceph-node4
-;Device to use as OSD, should be formatted
-device = sdb
+[NEW_OSD]
+;Nodes where new osd process will be running
+osd_nodes = ceph-node4:sdb
+
+[REMOVE_OSD]
+; Nodes where osds need to be removed
+osd_nodes = ceph-node4:sdb
+
